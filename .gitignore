@@ -1,0 +1,4 @@
+/tests/files-for-AT/*
+/tests/files-for-AT.zip
+/tests/read-only/
+__pycache__

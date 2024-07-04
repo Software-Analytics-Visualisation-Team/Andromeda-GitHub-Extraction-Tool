@@ -1,0 +1,35 @@
+<tool id="github_extraction" name="GitHub Extraction" version="1.0.3">
+    <description>extract GitHub repository to zip (code) data</description>
+    <command detect_errors="exit_code">
+        python '$__tool_directory__/extraction.py' "$repo_url" "$output1" 
+    </command>
+    <requirements>
+        <requirement type="package" version="3.10">python</requirement>
+      </requirements>
+    <inputs>
+        <param name="repo_url" type="text" label="GitHub Repository URL" optional="false" />
+    </inputs>
+
+    <outputs>
+        <data name="output1" format="zip" />
+    </outputs>
+
+    <help>
+**What it does**
+
+This tool takes an URL of a GitHub repository (**public**), clones the repository and deletes all files that are not source files of one of the languages: C++, Java (it keeps the folder hierarchy). This repository will then be zipped as an output.
+
+-----
+
+**Example**
+
+Extracting from the following GitHub repository URL:
+
+- https://github.com/kaanburaksener/octoBubbles 
+
+Provides:
+
+- Galaxyx-[GitHub_Repository_URL_on_data_x].zip
+    
+    </help>
+</tool>
