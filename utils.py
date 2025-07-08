@@ -40,7 +40,7 @@ def is_valid_github_url(url):
         response = requests.get(url)
         if response.status_code != 200:
             return False
-        if response.headers.get('Server') != 'GitHub.com':
+        if response.headers.get('Server') != 'github.com':
             return False
         return True
     except:
